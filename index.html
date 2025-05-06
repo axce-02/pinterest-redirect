@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pinterest Redirect</title>
+</head>
+<body>
+  <h2>Authorization Code Received</h2>
+  <p id="message">Looking for the code...</p>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+    if (code) {
+      document.getElementById("message").innerHTML = `<strong>Copy this code:</strong><br><code>${code}</code>`;
+    } else {
+      document.getElementById("message").innerText = "No code found in URL.";
+    }
+  </script>
+</body>
+</html>
